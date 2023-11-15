@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>To-Do-List Avançado</title>
+    <title>To-Do Avançado</title>
     <!-- CSS do projeto -->
     <link rel="stylesheet" href="css/styles.css">
     <!-- Font Awesome --> 
@@ -15,7 +15,7 @@
     <div class="todo-container">
         <!-- Cabeçalho-->
         <header>
-            <h1>To-Do-List Avançado</h1>
+            <h1>To Do List Avançado</h1>
         </header>
         <!-- Formulário para ADICIONAR-->
         <form id="todo-form">
@@ -28,7 +28,7 @@
             </div>
         </form>
         <!-- Formulário para EDITAR-->
-       <form id="edit-form" class="">
+       <form id="edit-form" class="hide">
         <p>Edite sua tarefa:</p>
         <div class="form-control">
             <input type="text" id="edit-input">
@@ -43,7 +43,7 @@
         </button>
        </form>
        <div id="toolbar">
-            <div class="search">
+            <div id="search">
                 <h4>Pesquisar:</h4>
                 <form >
                     <input type="text" id="search-input" placeholder="Buscar">
@@ -63,7 +63,7 @@
             </div>
        </div>
        <div id="todo-list">
-        <div class="todo">
+        <div class="todo done">
             <h3>Estou fazendo alguma coisa...</h3>
             <button class="finish-todo">
                 <i class="fa-solid fa-check"></i>
