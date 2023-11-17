@@ -42,6 +42,19 @@ const toggleForms = () => {
     editForm.classList.toggle("hide")
     todoForm.classList.toggle("hide")
     todoList.classList.toggle("hide")
+};
+
+const updateTodo = (text) => {
+    const todos = document.querySelectorAll(".todo")
+
+    todos.forEach((todo) => {
+        let todoTitle = todo.querySelector("h3")
+
+        if(todoTitle.innerText === oldInputValue){
+            todoTitle.innerText = text;
+        }
+    })
+
 }
 
 //Eventos
@@ -61,7 +74,7 @@ document.addEventListener("click", (e) => {
     const parentE1 = targetE1.closest("div");
     let todoTitle;
 
-    if(parentE1 && parent.querySelector("h3")){
+    if(parentE1 && parentE1.querySelector("h3")){
         todoTitle = parentE1.querySelector("h3").innerText;
     }
 
@@ -76,8 +89,8 @@ document.addEventListener("click", (e) => {
     if(targetE1.classList.contains("edit-todo")){
         toggleForms();
 
-        editInput.value = todoTitle
-        oldInputValue.value = todoTitle
+        editInput.value = todoTitle;
+        oldInputValue = todoTitle;
     }
 
 });
@@ -89,11 +102,13 @@ cancelEditBtn.addEventListener("click", (e) => {
 });
 
 editForm.addEventListener("submit", (e) => {
-    e.preventDefault()
+    e.preventDefault();
 
     const editInputValue = editInput.value;
 
-    if(inputValue){
-
+    if(editInputValue){
+        updateTodo(editInputValue);
     }
+
+    toggleForms()
 })
